@@ -1,17 +1,100 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-simple-dropdown-select';
+/* eslint-disable react-native/no-inline-styles */
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { DropDownSelect } from 'react-native-simple-dropdown-select';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState<any>(null);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <DropDownSelect
+        toggle={() => setOpen(!open)}
+        selectedData={value}
+        open={open}
+        data={[
+          {
+            id: 1,
+            name: 'California',
+            extraData: ['Apple', 'Banana', 'Orange', 'Mango'],
+          },
+          {
+            id: 2,
+            name: 'Texas',
+            extraData: ['Tomato', 'Potato', 'Onion', 'Garlic'],
+            disabled: true,
+          },
+          {
+            id: 3,
+            name: 'Florida',
+          },
+          {
+            id: 4,
+            name: 'New York',
+            extraData: ['Strawberry', 'Blueberry', 'Raspberry', 'Blackberry'],
+          },
+          {
+            id: 5,
+            name: 'Washington',
+            extraData: [
+              {
+                id: 1,
+                name: 'Apple',
+                extraData: ['Fuji', 'Honeycrisp', 'Gala', 'Granny Smith'],
+              },
+              {
+                id: 2,
+                name: 'Banana',
+                extraData: ['Cavendish', 'Lady Finger', 'Red', 'Blue'],
+              },
+              {
+                id: 3,
+                name: 'Orange',
+                extraData: ['Navel', 'Blood', 'Valencia', 'Clementine'],
+              },
+              {
+                id: 4,
+                name: 'Mango',
+                extraData: ['Ataulfo', 'Francis', 'Haden', 'Keitt'],
+              },
+            ],
+          },
+          {
+            id: 6,
+            name: 'Oregon',
+            extraData: [
+              'Grapes',
+              'Cherry',
+              'Apple',
+              'Banana',
+              'Orange',
+              'Mango',
+              'Peach',
+              'Plum',
+              'Pear',
+              'Apricot',
+            ],
+          },
+          {
+            id: 7,
+            name: 'Nevada',
+            extraData: ['Peach', 'Plum', 'Pear', 'Apricot'],
+          },
+        ]}
+        onSelect={(data) => {
+          setValue(data);
+          setOpen(false);
+        }}
+        dropDownContainerStyle={{
+          maxHeight: 400,
+          minWidth: 200,
+        }}
+        subViewStyle={{
+          backgroundColor: 'pink',
+          borderWidth: 1,
+        }}
+      />
     </View>
   );
 }

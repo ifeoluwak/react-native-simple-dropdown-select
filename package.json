@@ -1,7 +1,7 @@
 {
   "name": "react-native-simple-dropdown-select",
   "version": "0.1.0",
-  "description": "A simple dropdown select picker with support for expo written in typescript. Supports search and customisations",
+  "description": "A simple react native dropdown select picker with support for one-level nested data. Works in expo and written in typescript. Supports search and customisations",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -47,7 +47,16 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "dropdown",
+    "select",
+    "picker",
+    "expo",
+    "typescript",
+    "search",
+    "nested",
+    "simple",
+    "customisable"
   ],
   "repository": {
     "type": "git",
