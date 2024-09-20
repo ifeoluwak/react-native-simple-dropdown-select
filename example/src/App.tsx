@@ -41,40 +41,25 @@ export default function App() {
               {
                 id: 1,
                 name: 'Apple',
-                extraData: ['Fuji', 'Honeycrisp', 'Gala', 'Granny Smith'],
               },
               {
                 id: 2,
                 name: 'Banana',
-                extraData: ['Cavendish', 'Lady Finger', 'Red', 'Blue'],
               },
               {
                 id: 3,
                 name: 'Orange',
-                extraData: ['Navel', 'Blood', 'Valencia', 'Clementine'],
               },
               {
                 id: 4,
                 name: 'Mango',
-                extraData: ['Ataulfo', 'Francis', 'Haden', 'Keitt'],
               },
             ],
           },
           {
             id: 6,
             name: 'Oregon',
-            extraData: [
-              'Grapes',
-              'Cherry',
-              'Apple',
-              'Banana',
-              'Orange',
-              'Mango',
-              'Peach',
-              'Plum',
-              'Pear',
-              'Apricot',
-            ],
+            extraData: ['Grapes', 'Cherry', 'Apple', 'Banana', 'Orange'],
           },
           {
             id: 7,
@@ -88,8 +73,9 @@ export default function App() {
         }}
         dropDownContainerStyle={{
           maxHeight: 400,
-          minWidth: 200,
+          minWidth: 300,
         }}
+        search
         subViewStyle={{
           backgroundColor: 'pink',
           borderWidth: 1,
