@@ -8,40 +8,52 @@ A simple dropdown select picker with support for expo written in typescript. Sup
 npm install react-native-simple-dropdown-select
 ```
 
-## Demo
+### Expo
 
-<figure>
-    <img src="./demo/dropdown-select.png"
-         alt="Dropdown select" width='280'>
-            <img src="./demo/dropdown-select-1.png"
-         alt="Dropdown select" width='280'>
-             <img src="./demo/dropdown-select-4.png"
-         alt="Dropdown select" width='280' >
-    <figcaption>Texas item disabled | Florida item has no nested data | Item with no nested data selected.</figcaption>
-</figure>
+Works with expo
 
-<figure>
-          <img src="./demo/dropdown-select-2.png"
-         alt="Dropdown select" width='280'>
-         <img src="./demo/dropdown-select-3.png"
-         alt="Dropdown select" width='280'>
-    <figcaption>Item with nested data open | Nested data item is selected</figcaption>
-</figure>
+```sh
+npx expo install react-native-simple-dropdown-select
+```
 
-<figure>
-          <img src="./demo/search-demo.gif"
-         alt="Dropdown select" width='280'>
-    <figcaption>Search demo</figcaption>
-</figure>
+## Demo Examples
 
+<table>
+  <tr>
+    <td>Dropdown component</td>
+     <td>Texas item disabled</td>
+     <td>Florida item has no nested data & is selected.</td>
+  </tr>
+  <tr>
+    <td><img src="./demo/dropdown-select.png" width=270></td>
+    <td><img src="./demo/dropdown-select-1.png" width=270></td>
+    <td><img src="./demo/dropdown-select-4.png" width=270></td>
+  </tr>
+ </table>
 
+ <table>
+  <tr>
+    <td>Item with nested data open</td>
+     <td>Nested data item is selected</td>
+  </tr>
+  <tr>
+    <td><img src="./demo/dropdown-select-2.png" width=270></td>
+    <td><img src="./demo/dropdown-select-3.png" width=270></td>
+  </tr>
+ </table>
 
+  <table>
+  <tr>
+    <td>Search Enabled</td>
+  </tr>
+  <tr>
+    <td><img src="./demo/search-demo.gif" width=270></td>
+  </tr>
+ </table>
 
 ## Usage
 
 ```tsx
-import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
 import { DropDownSelect } from 'react-native-simple-dropdown-select';
 
 export default function App() {
@@ -49,7 +61,11 @@ export default function App() {
   const [value, setValue] = useState<any>(null);
 
   return (
-    <View style={styles.container}>
+    <View style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }}>
       <DropDownSelect
         toggle={() => setOpen(!open)}
         selectedData={value}
@@ -125,19 +141,6 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
 ```
 
 ## Props
